@@ -84,8 +84,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export XDG_CONFIG_HOME=$HOME/.config
 #export TERM=xterm-color256
-eval "$(pyenv init -)"
-alias activate="source $PYENV_ROOT/versions/anaconda3-4.1.0/bin/activate"
+#alias activate="source $PYENV_ROOT/versions/anaconda3-4.1.0/bin/activate"
 source ~/.cargo/env
 export RUST_SRC_PATH=~/local/src/rustc-1.4.0/src
 export GOPATH="$HOME/.go"
@@ -94,9 +93,10 @@ export GOROOT=/usr/local/go/
 export PATH="$GOROOT/bin:$PATH"
 #export PATH="$HOME/local/depot_tools:${PATH}"
 #export PATH="$HOME/local/skia/bin:${PATH}"
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
-
+if [ -d $HOME/.anyenv ] ; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
 
 export PERCOL=peco
 if [[ ! -n $TMUX && $- == *l* ]]; then
@@ -125,4 +125,4 @@ fi
 # zplug
 source ~/.zplug/init.zsh
 #zplug "sorin-ionescu/prezto"
-zplug load --verbose
+#zplug load --verbose
