@@ -124,5 +124,12 @@ fi
 
 # zplug
 source ~/.zplug/init.zsh
-#zplug "sorin-ionescu/prezto"
+zplug "sorin-ionescu/prezto"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:2
+zplug "zsh-users/zsh-completions"
 #zplug load --verbose
+if ! zplug check; then
+	 zplug install
+fi
+zplug load
