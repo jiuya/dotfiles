@@ -111,6 +111,9 @@ let g:go_highlight_build_constraints = 1
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
 on_ft = 'python'
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = 'python'
 
 [[plugins]]
 repo = 'elzr/vim-json'
