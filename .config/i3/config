@@ -162,6 +162,9 @@ bindsym XF86Sleep exec --no-startup-id systemctl suspend
 bindsym $mod+Prior workspace prev
 bindsym $mod+Next workspace next
 
+# ScreenShot
+bindsym --release Print exec "scrot -s $HOME/Pictures/ScreenShot/`date +%Y-%m-%d_%H:%M:%S`.png"
+
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id fcitx

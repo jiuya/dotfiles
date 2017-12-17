@@ -43,6 +43,11 @@ repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+hook_add = '''
+  let g:NERDTreeShowBookmarks=1
+  map <C-n> :NERDTreeToggle<CR>
+'''
+
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
