@@ -1,0 +1,12 @@
+[Unit]
+Description=Starts i3lock at suspend time
+After=sleep.target
+
+[Service]
+User=jiuya
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/jiuya/.i3/i3lock-fancy-multimonitor/lock -p
+
+[Install]
+WantedBy=sleep.target
