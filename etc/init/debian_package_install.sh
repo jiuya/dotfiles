@@ -6,10 +6,14 @@ else
     exit 1
 fi
 
-package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh lightdm i3 suckless-tools i3blocks zlib1g-dev libssl-dev)
+package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh suckless-tools zlib1g-dev libssl-dev fish libbz2-dev)
 
+sudo bash -c "echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_9.0/ /' > /etc/apt/sources.list.d/shells:fish:release:2.list"
+
+sudo bash -c "apt-get update"
 sudo bash -c "apt-get install -y aptitude"
 sudo bash -c "aptitude install -y ${package[*]}"
+
 
 if [ ! -f ~/.cargo/env ] ; then
     curl https://sh.rustup.rs -sSf | sh
@@ -26,5 +30,5 @@ fi
 if [ ! -d ~/.tmux/tmux-powerline ] ; then
     git clone git://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
 fi
-sudo bash -c "dpkg-reconfigure lightdm"
-chsh -s /usr/bin/zsh
+#sudo bash -c "dpkg-reconfigure lightdm"
+chsh -s /usr/bin/fish
