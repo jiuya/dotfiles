@@ -26,4 +26,4 @@ if test -d $HOME/.anyenv
   eval (anyenv init -)
 end
 
-
+tmux
