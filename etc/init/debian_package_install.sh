@@ -30,5 +30,6 @@ fi
 if [ ! -d ~/.tmux/tmux-powerline ] ; then
     git clone git://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
 fi
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
 #sudo bash -c "dpkg-reconfigure lightdm"
 chsh -s /usr/bin/fish
