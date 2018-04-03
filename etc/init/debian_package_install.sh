@@ -6,7 +6,7 @@ else
     exit 1
 fi
 
-package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh lightdm i3 suckless-tools i3blocks)
+package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh lightdm i3 suckless-tools i3blocks zlib1g-dev libssl-dev)
 
 sudo bash -c "apt-get install -y aptitude"
 sudo bash -c "aptitude install -y ${package[*]}"
