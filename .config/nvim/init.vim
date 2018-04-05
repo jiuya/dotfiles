@@ -1,3 +1,9 @@
+if $SHELL =~ 'fish$'
+    set shell=/bin/bash
+endif
+let g:python_host_prog = expand('~/.pyenv/versions/2.7-dev/bin/python2')
+let g:python3_host_prog = expand('~/.pyenv/versions/3.5-dev/bin/python3')
+
 " vimrc に以下のように追記
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
