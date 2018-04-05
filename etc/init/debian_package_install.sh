@@ -7,12 +7,14 @@ else
 fi
 
 package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh suckless-tools zlib1g-dev libssl-dev fish libbz2-dev)
+package_dev=(clang clang-format)
 
 sudo bash -c "echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_9.0/ /' > /etc/apt/sources.list.d/shells:fish:release:2.list"
 
 sudo bash -c "apt-get update"
 sudo bash -c "apt-get install -y aptitude"
 sudo bash -c "aptitude install -y ${package[*]}"
+sudo bash -c "aptitude install -y ${package_dev[*]}"
 
 
 if [ ! -f ~/.cargo/env ] ; then
