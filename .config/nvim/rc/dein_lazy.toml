@@ -73,13 +73,13 @@ on_ft = ['c', 'cpp']
 repo = 'tweekmonster/deoplete-clang2'
 on_ft = ['c', 'cpp','cmake']
 
-#[[plugins]]
-#repo = 'zchee/deoplete-clang'
-#on_ft = ['c', 'cpp','cmake']
-#hook_source = '''
-#let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
-#let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-#'''
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp','cmake']
+hook_source = '''
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
 
 [[plugins]]
 repo = 'rhysd/vim-clang-format'

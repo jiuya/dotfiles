@@ -7,7 +7,7 @@ else
 fi
 
 package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh suckless-tools zlib1g-dev libssl-dev fish libbz2-dev)
-package_dev=(clang clang-format)
+package_dev=(clang clang-format global)
 
 sudo bash -c "echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_9.0/ /' > /etc/apt/sources.list.d/shells:fish:release:2.list"
 
