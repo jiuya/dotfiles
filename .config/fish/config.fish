@@ -5,7 +5,10 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias tj='trans {en=ja}'
+alias te='trans {ja=en}'
+alias tjb='trans {en=ja} -b'
+alias teb='trans {ja=en} -b'
 
 set -x PYENV_ROOT $HOME/.pyenv
 set -x PATH $PYENV_ROOT/bin $PATH
