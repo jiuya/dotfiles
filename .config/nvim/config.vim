@@ -42,6 +42,11 @@ set cmdheight=2
 set laststatus=2
 "タブをスペースに置き換え
 set expandtab
+"Makefile のときタブを入力する
+augroup MakefileTab
+au!
+au FileType make set noexpandtab softtabstop&
+augroup END
 "画面最後の行をできる限り表示する
 set display=lastline
 "Tab、行末の半角スペースを明示的に表示する
