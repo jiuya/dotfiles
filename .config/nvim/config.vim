@@ -85,6 +85,15 @@ nnoremap h <Left>zv
 nnoremap j gj
 nnoremap k gk
 nnoremap l <Right>zv
+
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
+nnoremap <C-h> :ccl<CR>
+
+nnoremap Q <Nop>
+
+
+" NEADTree
 nnoremap <silent><C-e> :NERDTree<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

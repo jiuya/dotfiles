@@ -18,12 +18,16 @@ set -x XDG_CONFIG_HOME $HOME/.config
 #alias activate="source $PYENV_ROOT/versions/anaconda3-4.1.0/bin/activate"
 source ~/.cargo/env
 set -x RUST_SRC_PATH ~/local/src/rustc-1.4.0/src
-set -x GOPATH $HOME/.go
-set -x PATH $PATH $HOME/.go/bin
-set -x GOROOT /usr/local/go
-set -x PATH $GOROOT/bin $PATH
+if test -d ~/.go
+    set -x GOPATH ~/.go
+    set -x PATH $PATH ~/.go/bin
+    set -x GOROOT /usr/local/go
+    set -x PATH $GOROOT/bin $PATH
+end
 #set -x PATH "$HOME/local/depot_tools:${PATH}"
 #set -x PATH "$HOME/local/skia/bin:${PATH}"
+set -x PATH $HOME/local/nRF5x-Command-Line-Tools_9_7_3_Linux-x86_64/nrfjprog $PATH
+set -x PATH $HOME/local/nRF5x-Command-Line-Tools_9_7_3_Linux-x86_64/mergehex $PATH
 if test -d $HOME/.anyenv
   export PATH $HOME/.anyenv/bin $PATH
   eval (anyenv init -)

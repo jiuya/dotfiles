@@ -93,7 +93,7 @@ repo = 'rhysd/vim-clang-format'
 on_ft = ['c', 'cpp']
 on_source = ['vim-operator-user']
 hook_source = '''
-autocmd FileType c,cpp ClangFormatAutoEnable
+"autocmd FileType c,cpp ClangFormatAutoEnable
 '''
 
 [[plugins]]
@@ -165,3 +165,44 @@ on_ft = 'swift'
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = 'vue'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+on_ft = 'scala'
+[[plugins]]
+repo = 'lighttiger2505/gtags.vim'
+on_ft = ['c', 'cpp','python']
+hook_add = '''
+    " Options
+    let g:Gtags_Auto_Map = 0
+    let g:Gtags_Auto_Update = 1
+    let g:Gtags_OpenQuickfixWindow = 1
+    " Keymap
+    " Show definetion of function cousor word on quickfix
+    nmap <silent> K :<C-u>exe("Gtags ".expand('<cword>'))<CR>
+    " Show reference of cousor word on quickfix
+    nmap <silent> R :<C-u>exe("Gtags -r ".expand('<cword>'))<CR>
+    "for gnu global
+    nnoremap <Space>gd :Gtags<Space>
+    nnoremap <Space>gr :Gtags -r
+    nnoremap <Space>gf :Gtags -f
+    nnoremap <Space>gg :Gtags -g
+    nnoremap <Space>gc :GtagsCursor<Enter>
+    nnoremap <Space>gu :GtagsUpdate<Enter>
+'''
+#[[plugins]]
+#repo = 'jsfaint/gen_tags.vim'
+#on_source = 'gtags.vim'
+#hook_add = '''
+#    let g:gen_tags#gtags_auto_gen = 1
+#'''
+[[plugins]]
+repo = 'ozelentok/denite-gtags'
+on_source = 'gtags.vim'
+hook_add = '''
+    " Prefix key
+    nmap [denite] <Nop>
+    map <C-j> [denite]
+    " Keymap
+    nmap <silent> [denite]<C-D> :Denite -buffer-name=gtags_completion gtags_completion<cr>
+'''
