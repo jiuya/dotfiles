@@ -17,7 +17,9 @@
 	co = checkout
 	stt= status -uno
 	difff = diff --word-diff
-[url "git@github.com:"]
-    insteadOf = git://github.com/
-    insteadOf = https://github.com/
-    insteadOf = http://github.com/
+#[url "git@github.com:"]
+ #   insteadOf = git://github.com/
+  #  insteadOf = https://github.com/
+   # insteadOf = http://github.com/
+[color]
+	ui = auto

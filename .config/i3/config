@@ -44,10 +44,10 @@ bindsym $mod+x kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -125,6 +125,8 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec --no-startup-id \
         "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
+
+bindsym $mod+l exec --no-startup-id light-locker-command -l
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -156,17 +158,22 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% &&
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks # mute sound
 
+# Brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10% && pkill -RTMIN+12 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10% && pkill -RTMIN+12 i3blocks
+
 # Sleep key
 bindsym XF86Sleep exec --no-startup-id systemctl suspend
 
 bindsym $mod+Prior workspace prev
 bindsym $mod+Next workspace next
 
-#exec --no-startup-id nm-applet
-#exec --no-startup-id dunst
+exec --no-startup-id light-locker
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 #exec --no-startup-id fcitx
 #exec --no-startup-id parcellite
-#exec --no-startup-id volumeicon
+exec --no-startup-id volumeicon
 #exec --no-startup-id "feh --bg-scale $HOME/.config/i3/rical-nanoha0513.png"
 #exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
 
