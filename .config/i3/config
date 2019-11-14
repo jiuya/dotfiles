@@ -51,7 +51,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -modi run -location 1 -width
 		 -color-normal '#222222, #b1b4b3, #222222, #005577, #b1b4b3' \
 		 -color-active '#222222, #b1b4b3, #222222, #007763, #b1b4b3' \
 		 -color-urgent '#222222, #b1b4b3, #222222, #77003d, #b1b4b3'"
-
+bindsym $mod+Shift+s exec --no-startup-id "rofi -show ssh"
 # change focus
 # bindsym $mod+j focus left
 # bindsym $mod+k focus down
