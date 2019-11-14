@@ -6,7 +6,7 @@ else
     exit 1
 fi
 
-package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh suckless-tools zlib1g-dev libssl-dev fish libbz2-dev translate-shell xbacklight)
+package=(gcc make git neovim tmux zsh curl sakura compton htop fcitx volumeicon-alsa network-manager-gnome dunst feh suckless-tools zlib1g-dev libssl-dev fish libbz2-dev translate-shell xbacklight rofi)
 package_dev=(clang clang-format global)
 
 sudo bash -c "wget -nv https://download.opensuse.org/repositories/shells:fish:release:2/Debian_9.0/Release.key -O /tmp/Release.key"
